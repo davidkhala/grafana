@@ -1,550 +1,385 @@
 {
-  "apiVersion": "dashboard.grafana.app/v2",
-  "kind": "Dashboard",
-  "metadata": {
-    "name": "china-big-screen-dashboard",
-    "resourceVersion": "1702588800000"
-  },
-  "spec": {
-    "annotations": [
-      {
-        "kind": "AnnotationQuery",
-        "spec": {
-          "builtIn": true,
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "query": {
-            "datasource": {
-              "name": "-- Grafana --"
-            },
-            "group": "grafana",
-            "kind": "DataQuery",
-            "spec": {},
-            "version": "v0"
-          }
-        }
-      }
-    ],
-    "cursorSync": "Off",
-    "description": "中国大数据中央大屏 - 基于Grafana实现",
-    "editable": true,
-    "elements": {
-      "panel-1": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "infinity"
-                      },
-                      "group": "yesoreyeram-infinity-datasource",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "data": "[\n  {\"province\": \"北京\", \"value\": 95},\n  {\"province\": \"上海\", \"value\": 90},\n  {\"province\": \"广东\", \"value\": 85},\n  {\"province\": \"江苏\", \"value\": 80},\n  {\"province\": \"浙江\", \"value\": 75},\n  {\"province\": \"山东\", \"value\": 70},\n  {\"province\": \"河南\", \"value\": 65},\n  {\"province\": \"湖北\", \"value\": 60},\n  {\"province\": \"湖南\", \"value\": 55},\n  {\"province\": \"四川\", \"value\": 50}\n]",
-                        "format": "json",
-                        "root_selector": "",
-                        "type": "inline"
-                      }
-                    },
-                    "refId": "A"
-                  }
-                }
-              ]
-            }
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 12,
-            "w": 12,
-            "x": 0,
-            "y": 0
-          },
-          "id": 1,
-          "options": {
-            "renderer": "flot",
-            "x": {
-              "show": true
-            },
-            "y": {
-              "show": true
-            }
-          },
-          "pluginVersion": "10.0.0",
-          "targets": [],
-          "title": "中国地图数据分布",
-          "type": "yesoreyeram-infinity-datasource"
-        }
-      },
-      "panel-2": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "infinity"
-                      },
-                      "group": "yesoreyeram-infinity-datasource",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "data": "[\n  {\"time\": \"2024-01-01\", \"value\": 100},\n  {\"time\": \"2024-01-02\", \"value\": 120},\n  {\"time\": \"2024-01-03\", \"value\": 110},\n  {\"time\": \"2024-01-04\", \"value\": 130},\n  {\"time\": \"2024-01-05\", \"value\": 140}\n]",
-                        "format": "json",
-                        "root_selector": "",
-                        "type": "inline"
-                      }
-                    },
-                    "refId": "A"
-                  }
-                }
-              ]
-            }
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "vis": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 6,
-            "x": 12,
-            "y": 0
-          },
-          "id": 2,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "single",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.0.0",
-          "targets": [],
-          "title": "趋势图01",
-          "type": "timeseries"
-        }
-      },
-      "panel-3": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "infinity"
-                      },
-                      "group": "yesoreyeram-infinity-datasource",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "data": "[\n  {\"category\": \"A\", \"value\": 30},\n  {\"category\": \"B\", \"value\": 25},\n  {\"category\": \"C\", \"value\": 20},\n  {\"category\": \"D\", \"value\": 15},\n  {\"category\": \"E\", \"value\": 10}\n]",
-                        "format": "json",
-                        "root_selector": "",
-                        "type": "inline"
-                      }
-                    },
-                    "refId": "A"
-                  }
-                }
-              ]
-            }
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "vis": false
-                }
-              },
-              "mappings": []
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 6,
-            "x": 18,
-            "y": 0
-          },
-          "id": 3,
-          "options": {
-            "legend": {
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "pie": {
-              "type": "pie"
-            },
-            "tooltip": {
-              "mode": "single"
-            }
-          },
-          "pluginVersion": "10.0.0",
-          "targets": [],
-          "title": "饼图02",
-          "type": "piechart"
-        }
-      },
-      "panel-4": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "infinity"
-                      },
-                      "group": "yesoreyeram-infinity-datasource",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "data": "[\n  {\"metric\": \"KPI1\", \"value\": 12345},\n  {\"metric\": \"KPI2\", \"value\": 67890}\n]",
-                        "format": "json",
-                        "root_selector": "",
-                        "type": "inline"
-                      }
-                    },
-                    "refId": "A"
-                  }
-                }
-              ]
-            }
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [
-                {
-                  "options": {
-                    "12345": {
-                      "text": "12,345"
-                    },
-                    "67890": {
-                      "text": "67,890"
-                    }
-                  },
-                  "type": "value"
-                }
-              ],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 6,
-            "x": 12,
-            "y": 6
-          },
-          "id": 4,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "auto",
-            "orientation": "auto",
-            "reduceOptions": {
-              "values": false,
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": ""
-            },
-            "textMode": "auto"
-          },
-          "pluginVersion": "10.0.0",
-          "targets": [],
-          "title": "KPI指标03",
-          "type": "stat"
-        }
-      },
-      "panel-5": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "infinity"
-                      },
-                      "group": "yesoreyeram-infinity-datasource",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "data": "[\n  {\"x\": 1, \"y\": 10},\n  {\"x\": 2, \"y\": 15},\n  {\"x\": 3, \"y\": 12},\n  {\"x\": 4, \"y\": 18},\n  {\"x\": 5, \"y\": 20}\n]",
-                        "format": "json",
-                        "root_selector": "",
-                        "type": "inline"
-                      }
-                    },
-                    "refId": "A"
-                  }
-                }
-              ]
-            }
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "fillOpacity": 80,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "vis": false
-                },
-                "lineWidth": 1,
-                "scaleDistribution": {
-                  "type": "linear"
-                }
-              },
-              "mappings": []
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 6,
-            "x": 18,
-            "y": 6
-          },
-          "id": 5,
-          "options": {
-            "barRadius": 0,
-            "barWidth": 0.8,
-            "groupWidth": 0.7,
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": false
-            },
-            "orientation": "auto",
-            "showValue": "auto",
-            "text": {},
-            "tooltip": {
-              "mode": "single",
-              "sort": "none"
-            },
-            "xTickLabelRotation": 0,
-            "xTickLabelSpacing": 0
-          },
-          "pluginVersion": "10.0.0",
-          "targets": [],
-          "title": "柱状图04",
-          "type": "barchart"
-        }
-      }
-    },
-    "layout": {
-      "kind": "GridLayout",
-      "spec": {
-        "items": [
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-1"
-              },
-              "height": 12,
-              "width": 12,
-              "x": 0,
-              "y": 0
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-2"
-              },
-              "height": 6,
-              "width": 6,
-              "x": 12,
-              "y": 0
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-3"
-              },
-              "height": 6,
-              "width": 6,
-              "x": 18,
-              "y": 0
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-4"
-              },
-              "height": 6,
-              "width": 6,
-              "x": 12,
-              "y": 6
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-5"
-              },
-              "height": 6,
-              "width": 6,
-              "x": 18,
-              "y": 6
-            }
-          }
-        ]
-      }
-    },
-    "links": [],
-    "liveNow": false,
-    "preload": false,
+  "dashboard": {
+    "id": null,
+    "title": "中国大数据中央大屏",
     "tags": [
       "big-screen",
       "china-map",
       "dashboard"
     ],
-    "timeSettings": {
-      "autoRefresh": "",
-      "autoRefreshIntervals": [
+    "style": "dark",
+    "timezone": "browser",
+    "editable": true,
+    "hideControls": false,
+    "graphTooltip": 0,
+    "panels": [
+      {
+        "id": 1,
+        "title": "中国地图数据分布",
+        "type": "yesoreyeram-infinity-datasource",
+        "gridPos": {
+          "h": 12,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "targets": [],
+        "options": {
+          "renderer": "flot",
+          "x": {
+            "show": true
+          },
+          "y": {
+            "show": true
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "pluginVersion": "10.0.0",
+        "datasource": {
+          "name": "infinity"
+        },
+        "data": {
+          "queries": [
+            {
+              "refId": "A",
+              "query": {
+                "data": "[\n  {\"province\": \"北京\", \"value\": 95},\n  {\"province\": \"上海\", \"value\": 90},\n  {\"province\": \"广东\", \"value\": 85},\n  {\"province\": \"江苏\", \"value\": 80},\n  {\"province\": \"浙江\", \"value\": 75},\n  {\"province\": \"山东\", \"value\": 70},\n  {\"province\": \"河南\", \"value\": 65},\n  {\"province\": \"湖北\", \"value\": 60},\n  {\"province\": \"湖南\", \"value\": 55},\n  {\"province\": \"四川\", \"value\": 50}\n]",
+                "format": "json",
+                "root_selector": "",
+                "type": "inline"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "title": "趋势图01",
+        "type": "timeseries",
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 12,
+          "y": 0
+        },
+        "targets": [],
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "vis": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "pluginVersion": "10.0.0",
+        "datasource": {
+          "name": "infinity"
+        },
+        "data": {
+          "queries": [
+            {
+              "refId": "A",
+              "query": {
+                "data": "[\n  {\"time\": \"2024-01-01\", \"value\": 100},\n  {\"time\": \"2024-01-02\", \"value\": 120},\n  {\"time\": \"2024-01-03\", \"value\": 110},\n  {\"time\": \"2024-01-04\", \"value\": 130},\n  {\"time\": \"2024-01-05\", \"value\": 140}\n]",
+                "format": "json",
+                "root_selector": "",
+                "type": "inline"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "title": "饼图02",
+        "type": "piechart",
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 18,
+          "y": 0
+        },
+        "targets": [],
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "pie": {
+            "type": "pie"
+          },
+          "tooltip": {
+            "mode": "single"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "vis": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
+        "pluginVersion": "10.0.0",
+        "datasource": {
+          "name": "infinity"
+        },
+        "data": {
+          "queries": [
+            {
+              "refId": "A",
+              "query": {
+                "data": "[\n  {\"category\": \"A\", \"value\": 30},\n  {\"category\": \"B\", \"value\": 25},\n  {\"category\": \"C\", \"value\": 20},\n  {\"category\": \"D\", \"value\": 15},\n  {\"category\": \"E\", \"value\": 10}\n]",
+                "format": "json",
+                "root_selector": "",
+                "type": "inline"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "title": "KPI指标03",
+        "type": "stat",
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 12,
+          "y": 6
+        },
+        "targets": [],
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "values": false,
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": ""
+          },
+          "textMode": "auto"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "12345": {
+                    "text": "12,345"
+                  },
+                  "67890": {
+                    "text": "67,890"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "pluginVersion": "10.0.0",
+        "datasource": {
+          "name": "infinity"
+        },
+        "data": {
+          "queries": [
+            {
+              "refId": "A",
+              "query": {
+                "data": "[\n  {\"metric\": \"KPI1\", \"value\": 12345},\n  {\"metric\": \"KPI2\", \"value\": 67890}\n]",
+                "format": "json",
+                "root_selector": "",
+                "type": "inline"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "title": "柱状图04",
+        "type": "barchart",
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 18,
+          "y": 6
+        },
+        "targets": [],
+        "options": {
+          "barRadius": 0,
+          "barWidth": 0.8,
+          "groupWidth": 0.7,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "orientation": "auto",
+          "showValue": "auto",
+          "text": {},
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          },
+          "xTickLabelRotation": 0,
+          "xTickLabelSpacing": 0
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "fillOpacity": 80,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "vis": false
+              },
+              "lineWidth": 1,
+              "scaleDistribution": {
+                "type": "linear"
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
+        "pluginVersion": "10.0.0",
+        "datasource": {
+          "name": "infinity"
+        },
+        "data": {
+          "queries": [
+            {
+              "refId": "A",
+              "query": {
+                "data": "[\n  {\"x\": 1, \"y\": 10},\n  {\"x\": 2, \"y\": 15},\n  {\"x\": 3, \"y\": 12},\n  {\"x\": 4, \"y\": 18},\n  {\"x\": 5, \"y\": 20}\n]",
+                "format": "json",
+                "root_selector": "",
+                "type": "inline"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
         "5s",
         "10s",
         "30s",
@@ -556,15 +391,54 @@
         "2h",
         "1d"
       ],
-      "fiscalYearStartMonth": 0,
-      "from": "now-1h",
-      "hideTimepicker": false,
-      "timezone": "browser",
-      "to": "now"
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
     },
-    "title": "中国大数据中央大屏",
-    "uid": "china-big-screen-uid",
+    "templating": {
+      "list": []
+    },
+    "annotations": {
+      "list": [
+        {
+          "builtIn": true,
+          "datasource": {
+            "name": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "refresh": "",
+    "schemaVersion": 27,
     "version": 1,
-    "variables": []
-  }
+    "links": []
+  },
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": false,
+    "canStar": true,
+    "slug": "china-big-screen-dashboard",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "0001-01-01T00:00:00Z",
+    "updated": "0001-01-01T00:00:00Z",
+    "updatedBy": "Anonymous",
+    "createdBy": "Anonymous",
+    "version": 1
+  },
+  "message": "Converted to classic Grafana dashboard format"
 }
