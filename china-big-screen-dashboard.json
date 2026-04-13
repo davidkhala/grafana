@@ -1,385 +1,1866 @@
 {
-  "dashboard": {
-    "id": null,
-    "title": "中国大数据中央大屏",
-    "tags": [
-      "big-screen",
-      "china-map",
-      "dashboard"
-    ],
-    "style": "dark",
-    "timezone": "browser",
-    "editable": true,
-    "hideControls": false,
-    "graphTooltip": 0,
-    "panels": [
+  "apiVersion": "dashboard.grafana.app/v2",
+  "kind": "Dashboard",
+  "metadata": {
+    "name": "da6gb2j",
+    "namespace": "stacks-1568209",
+    "uid": "ea7176f2-0bb6-4c8b-a952-3a0f5a0edc62",
+    "resourceVersion": "1776075962348504",
+    "generation": 6,
+    "creationTimestamp": "2026-04-13T07:51:16Z",
+    "labels": {
+      "grafana.app/deprecatedInternalID": "3467246360121344"
+    },
+    "annotations": {
+      "grafana.app/createdBy": "user:dfgu8t523os8wb",
+      "grafana.app/folder": "",
+      "grafana.app/saved-from-ui": "Grafana Cloud",
+      "grafana.app/updatedBy": "user:dfgu8t523os8wb",
+      "grafana.app/updatedTimestamp": "2026-04-13T10:26:02Z"
+    }
+  },
+  "spec": {
+    "annotations": [
       {
-        "id": 1,
-        "title": "中国地图数据分布",
-        "type": "yesoreyeram-infinity-datasource",
-        "gridPos": {
-          "h": 12,
-          "w": 12,
-          "x": 0,
-          "y": 0
-        },
-        "targets": [],
-        "options": {
-          "renderer": "flot",
-          "x": {
-            "show": true
-          },
-          "y": {
-            "show": true
-          }
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
+        "kind": "AnnotationQuery",
+        "spec": {
+          "query": {
+            "kind": "DataQuery",
+            "group": "grafana",
+            "version": "v0",
+            "datasource": {
+              "name": "-- Grafana --"
             },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
+            "spec": {}
           },
-          "overrides": []
-        },
-        "pluginVersion": "10.0.0",
-        "datasource": {
-          "name": "infinity"
-        },
-        "data": {
-          "queries": [
-            {
-              "refId": "A",
-              "query": {
-                "data": "[\n  {\"province\": \"北京\", \"value\": 95},\n  {\"province\": \"上海\", \"value\": 90},\n  {\"province\": \"广东\", \"value\": 85},\n  {\"province\": \"江苏\", \"value\": 80},\n  {\"province\": \"浙江\", \"value\": 75},\n  {\"province\": \"山东\", \"value\": 70},\n  {\"province\": \"河南\", \"value\": 65},\n  {\"province\": \"湖北\", \"value\": 60},\n  {\"province\": \"湖南\", \"value\": 55},\n  {\"province\": \"四川\", \"value\": 50}\n]",
-                "format": "json",
-                "root_selector": "",
-                "type": "inline"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "id": 2,
-        "title": "趋势图01",
-        "type": "timeseries",
-        "gridPos": {
-          "h": 6,
-          "w": 6,
-          "x": 12,
-          "y": 0
-        },
-        "targets": [],
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "vis": false
-              },
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "pluginVersion": "10.0.0",
-        "datasource": {
-          "name": "infinity"
-        },
-        "data": {
-          "queries": [
-            {
-              "refId": "A",
-              "query": {
-                "data": "[\n  {\"time\": \"2024-01-01\", \"value\": 100},\n  {\"time\": \"2024-01-02\", \"value\": 120},\n  {\"time\": \"2024-01-03\", \"value\": 110},\n  {\"time\": \"2024-01-04\", \"value\": 130},\n  {\"time\": \"2024-01-05\", \"value\": 140}\n]",
-                "format": "json",
-                "root_selector": "",
-                "type": "inline"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "id": 3,
-        "title": "饼图02",
-        "type": "piechart",
-        "gridPos": {
-          "h": 6,
-          "w": 6,
-          "x": 18,
-          "y": 0
-        },
-        "targets": [],
-        "options": {
-          "legend": {
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "pie": {
-            "type": "pie"
-          },
-          "tooltip": {
-            "mode": "single"
-          }
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "vis": false
-              }
-            },
-            "mappings": []
-          },
-          "overrides": []
-        },
-        "pluginVersion": "10.0.0",
-        "datasource": {
-          "name": "infinity"
-        },
-        "data": {
-          "queries": [
-            {
-              "refId": "A",
-              "query": {
-                "data": "[\n  {\"category\": \"A\", \"value\": 30},\n  {\"category\": \"B\", \"value\": 25},\n  {\"category\": \"C\", \"value\": 20},\n  {\"category\": \"D\", \"value\": 15},\n  {\"category\": \"E\", \"value\": 10}\n]",
-                "format": "json",
-                "root_selector": "",
-                "type": "inline"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "id": 4,
-        "title": "KPI指标03",
-        "type": "stat",
-        "gridPos": {
-          "h": 6,
-          "w": 6,
-          "x": 12,
-          "y": 6
-        },
-        "targets": [],
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "values": false,
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": ""
-          },
-          "textMode": "auto"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [
-              {
-                "options": {
-                  "12345": {
-                    "text": "12,345"
-                  },
-                  "67890": {
-                    "text": "67,890"
-                  }
-                },
-                "type": "value"
-              }
-            ],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": []
-        },
-        "pluginVersion": "10.0.0",
-        "datasource": {
-          "name": "infinity"
-        },
-        "data": {
-          "queries": [
-            {
-              "refId": "A",
-              "query": {
-                "data": "[\n  {\"metric\": \"KPI1\", \"value\": 12345},\n  {\"metric\": \"KPI2\", \"value\": 67890}\n]",
-                "format": "json",
-                "root_selector": "",
-                "type": "inline"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "id": 5,
-        "title": "柱状图04",
-        "type": "barchart",
-        "gridPos": {
-          "h": 6,
-          "w": 6,
-          "x": 18,
-          "y": 6
-        },
-        "targets": [],
-        "options": {
-          "barRadius": 0,
-          "barWidth": 0.8,
-          "groupWidth": 0.7,
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "orientation": "auto",
-          "showValue": "auto",
-          "text": {},
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          },
-          "xTickLabelRotation": 0,
-          "xTickLabelSpacing": 0
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "fillOpacity": 80,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "vis": false
-              },
-              "lineWidth": 1,
-              "scaleDistribution": {
-                "type": "linear"
-              }
-            },
-            "mappings": []
-          },
-          "overrides": []
-        },
-        "pluginVersion": "10.0.0",
-        "datasource": {
-          "name": "infinity"
-        },
-        "data": {
-          "queries": [
-            {
-              "refId": "A",
-              "query": {
-                "data": "[\n  {\"x\": 1, \"y\": 10},\n  {\"x\": 2, \"y\": 15},\n  {\"x\": 3, \"y\": 12},\n  {\"x\": 4, \"y\": 18},\n  {\"x\": 5, \"y\": 20}\n]",
-                "format": "json",
-                "root_selector": "",
-                "type": "inline"
-              }
-            }
-          ]
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "builtIn": true
         }
       }
     ],
-    "time": {
-      "from": "now-1h",
-      "to": "now"
+    "cursorSync": "Off",
+    "editable": true,
+    "elements": {
+      "panel-1": {
+        "kind": "Panel",
+        "spec": {
+          "id": 1,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "text",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "code": {
+                  "language": "plaintext",
+                  "showLineNumbers": false,
+                  "showMiniMap": false
+                },
+                "content": "# 🏗️　港交所证券市场运营驾驶舱\n### HKEX Securities Market Operations · 实时监控 · 智能分析 · 精准决策　　　　　　　　　　　　　　　　更新时间：2026-04-13　　市场状态：交易中",
+                "mode": "markdown"
+              },
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-13": {
+        "kind": "Panel",
+        "spec": {
+          "id": 13,
+          "title": "恒生指数走势(今日)",
+          "description": "近七天每日产量走势",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "时间",
+                            "text": "时间",
+                            "type": "timestamp_epoch"
+                          },
+                          {
+                            "selector": "指数",
+                            "text": "恒生指数",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"时间\":1776045600000,\"指数\":20012},{\"时间\":1776047400000,\"指数\":19987},{\"时间\":1776049200000,\"指数\":20145},{\"时间\":1776051000000,\"指数\":20089},{\"时间\":1776052800000,\"指数\":20178},{\"时间\":1776054600000,\"指数\":20256},{\"时间\":1776056400000,\"指数\":20189},{\"时间\":1776058200000,\"指数\":20312},{\"时间\":1776060000000,\"指数\":20287},{\"时间\":1776061800000,\"指数\":20421},{\"时间\":1776063600000,\"指数\":20389},{\"时间\":1776065400000,\"指数\":20347}]",
+                        "format": "timeseries",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "none",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "fixed",
+                    "fixedColor": "#FF4560"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 10,
+                    "gradientMode": "opacity",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "smooth",
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-14": {
+        "kind": "Panel",
+        "spec": {
+          "id": 14,
+          "title": "今日成交额走势(亿港元)",
+          "description": "近7日OEE综合设备效率走势",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "时间",
+                            "text": "时间",
+                            "type": "timestamp_epoch"
+                          },
+                          {
+                            "selector": "成交额",
+                            "text": "成交额(亿港元)",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"时间\":1776045600000,\"成交额\":267.3},{\"时间\":1776047400000,\"成交额\":245.8},{\"时间\":1776049200000,\"成交额\":198.7},{\"时间\":1776051000000,\"成交额\":156.2},{\"时间\":1776052800000,\"成交额\":178.4},{\"时间\":1776054600000,\"成交额\":234.5},{\"时间\":1776056400000,\"成交额\":298.7},{\"时间\":1776058200000,\"成交额\":276.3},{\"时间\":1776060000000,\"成交额\":312.8},{\"时间\":1776061800000,\"成交额\":287.4},{\"时间\":1776063600000,\"成交额\":235.6},{\"时间\":1776065400000,\"成交额\":189.3}]",
+                        "format": "timeseries",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "cyan"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "fixed",
+                    "fixedColor": "#00B4D8"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "axisSoftMax": 350,
+                    "axisSoftMin": 100,
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 15,
+                    "gradientMode": "opacity",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "smooth",
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-19": {
+        "kind": "Panel",
+        "spec": {
+          "id": 19,
+          "title": "交易系统运行状态",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "系统",
+                            "text": "系统",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "可用率",
+                            "text": "可用率",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"系统\":\"订单处理\",\"可用率\":99.8},{\"系统\":\"结算清算\",\"可用率\":99.9},{\"系统\":\"行情数据\",\"可用率\":100.0},{\"系统\":\"风控管理\",\"可用率\":99.7},{\"系统\":\"投资者服务\",\"可用率\":98.5}]",
+                        "format": "table",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "bargauge",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "displayMode": "lcd",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 300,
+                "minVizHeight": 16,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": true
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "color"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "percent",
+                  "min": 95,
+                  "max": 100,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "red"
+                      },
+                      {
+                        "value": 97,
+                        "color": "orange"
+                      },
+                      {
+                        "value": 99,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-2": {
+        "kind": "Panel",
+        "spec": {
+          "id": 2,
+          "title": "今日成交额(亿港元)",
+          "description": "当日所有产线累计产出数量",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "value",
+                            "text": "成交额",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"value\": 1347.47}]",
+                        "range": false,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "colorMode": "background_solid",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "none",
+                  "decimals": 2,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "#d4380d"
+                      },
+                      {
+                        "value": 500,
+                        "color": "#d48806"
+                      },
+                      {
+                        "value": 1000,
+                        "color": "#1565c0"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-20": {
+        "kind": "Panel",
+        "spec": {
+          "id": 20,
+          "title": "大额成交记录",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "股票代码",
+                            "text": "股票代码",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "股票名称",
+                            "text": "股票名称",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "方向",
+                            "text": "方向",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "成交价",
+                            "text": "成交价(港元)",
+                            "type": "number"
+                          },
+                          {
+                            "selector": "成交额",
+                            "text": "成交额",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "时间",
+                            "text": "时间",
+                            "type": "string"
+                          }
+                        ],
+                        "data": "[{\"股票代码\":\"0700\",\"股票名称\":\"腾讯控股\",\"方向\":\"买入\",\"成交价\":408.00,\"成交额\":\"21.22亿\",\"时间\":\"09:35\"},{\"股票代码\":\"9988\",\"股票名称\":\"阿里巴巴\",\"方向\":\"卖出\",\"成交价\":82.45,\"成交额\":\"7.34亿\",\"时间\":\"09:38\"},{\"股票代码\":\"3690\",\"股票名称\":\"美团\",\"方向\":\"买入\",\"成交价\":145.20,\"成交额\":\"9.87亿\",\"时间\":\"10:12\"},{\"股票代码\":\"0939\",\"股票名称\":\"建设银行\",\"方向\":\"买入\",\"成交价\":6.85,\"成交额\":\"8.56亿\",\"时间\":\"10:45\"},{\"股票代码\":\"0005\",\"股票名称\":\"汇丰控股\",\"方向\":\"卖出\",\"成交价\":78.30,\"成交额\":\"5.87亿\",\"时间\":\"11:20\"}]",
+                        "format": "table",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "table",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "cellHeight": "sm",
+                "enablePagination": false,
+                "showHeader": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "custom": {
+                    "align": "auto",
+                    "cellOptions": {
+                      "type": "auto"
+                    },
+                    "filterable": true,
+                    "footer": {
+                      "reducers": []
+                    },
+                    "inspect": false
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "方向"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.cellOptions",
+                        "value": {
+                          "type": "color-text"
+                        }
+                      },
+                      {
+                        "id": "mappings",
+                        "value": [
+                          {
+                            "options": {
+                              "买入": {
+                                "color": "green",
+                                "index": 0
+                              },
+                              "卖出": {
+                                "color": "red",
+                                "index": 1
+                              }
+                            },
+                            "type": "value"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-21": {
+        "kind": "Panel",
+        "spec": {
+          "id": 21,
+          "title": "行业板块分布",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "板块",
+                            "text": "板块",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "占比",
+                            "text": "占比",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"板块\":\"金融\",\"占比\":35},{\"板块\":\"资讯科技\",\"占比\":22},{\"板块\":\"消费品\",\"占比\":18},{\"板块\":\"能源\",\"占比\":10},{\"板块\":\"医疗\",\"占比\":9},{\"板块\":\"其他\",\"占比\":6}]",
+                        "format": "table",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "partitionByValues",
+                  "spec": {
+                    "options": {
+                      "fields": [
+                        "板块"
+                      ],
+                      "keepFields": false
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "piechart",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "displayLabels": [
+                  "name",
+                  "percent"
+                ],
+                "legend": {
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true,
+                  "values": [
+                    "percent"
+                  ]
+                },
+                "pieType": "donut",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "sort": "desc",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "color": {
+                    "mode": "palette-classic",
+                    "fixedColor": "#73BF69"
+                  },
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-22": {
+        "kind": "Panel",
+        "spec": {
+          "id": 22,
+          "title": "今日TOP成交股票(百万港元)",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "股票",
+                            "text": "股票",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "成交额",
+                            "text": "成交额",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"股票\":\"腾讯(0700)\",\"成交额\":28450},{\"股票\":\"阿里(9988)\",\"成交额\":21380},{\"股票\":\"美团(3690)\",\"成交额\":9820},{\"股票\":\"建行(0939)\",\"成交额\":8740},{\"股票\":\"中移动(0941)\",\"成交额\":6520},{\"股票\":\"汇丰(0005)\",\"成交额\":5890}]",
+                        "format": "table",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "bargauge",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "displayMode": "gradient",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 300,
+                "minVizHeight": 16,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": true
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "color"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "min": 0,
+                  "max": 30000,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "blue"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-23": {
+        "kind": "Panel",
+        "spec": {
+          "id": 23,
+          "title": "交易类型分布",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "类型",
+                            "text": "类型",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "占比",
+                            "text": "占比",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"类型\":\"普通股\",\"占比\":72},{\"类型\":\"ETF\",\"占比\":18},{\"类型\":\"债券\",\"占比\":7},{\"类型\":\"其他\",\"占比\":3}]",
+                        "format": "table",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "partitionByValues",
+                  "spec": {
+                    "options": {
+                      "fields": [
+                        "类型"
+                      ],
+                      "keepFields": false
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "piechart",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "displayLabels": [
+                  "name",
+                  "percent"
+                ],
+                "legend": {
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true,
+                  "values": [
+                    "percent"
+                  ]
+                },
+                "pieType": "donut",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "sort": "desc",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "desc"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "color": {
+                    "mode": "palette-classic",
+                    "fixedColor": "#73BF69"
+                  },
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-24": {
+        "kind": "Panel",
+        "spec": {
+          "id": 24,
+          "title": "市场关键指标(%)",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "指标",
+                            "text": "指标",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "数值",
+                            "text": "数值",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"指标\":\"市场上涨占比\",\"数值\":69},{\"指标\":\"机构参与率\",\"数值\":84},{\"指标\":\"外资净买入占比\",\"数值\":23},{\"指标\":\"衍生品对冲比\",\"数值\":76},{\"指标\":\"ETF成交占比\",\"数值\":18}]",
+                        "format": "table",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "bargauge",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "displayMode": "gradient",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 300,
+                "minVizHeight": 16,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": true
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "color"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "min": 0,
+                  "max": 100,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "blue"
+                      },
+                      {
+                        "value": 50,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-25": {
+        "kind": "Panel",
+        "spec": {
+          "id": 25,
+          "title": "沪港通 · 深港通境内投资者地理分布",
+          "description": "主要城市通过沪港通/深港通参与港股交易的成交量地理分布",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "城市",
+                            "text": "城市",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "纬度",
+                            "text": "纬度",
+                            "type": "number"
+                          },
+                          {
+                            "selector": "经度",
+                            "text": "经度",
+                            "type": "number"
+                          },
+                          {
+                            "selector": "成交量",
+                            "text": "成交量(亿港元)",
+                            "type": "number"
+                          },
+                          {
+                            "selector": "投资者数",
+                            "text": "投资者数(万)",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"城市\":\"香港\",\"纬度\":22.32,\"经度\":114.17,\"成交量\":62.40,\"投资者数\":56},{\"城市\":\"上海\",\"纬度\":31.23,\"经度\":121.47,\"成交量\":48.23,\"投资者数\":125},{\"城市\":\"北京\",\"纬度\":39.90,\"经度\":116.41,\"成交量\":35.67,\"投资者数\":98},{\"城市\":\"深圳\",\"纬度\":22.54,\"经度\":114.06,\"成交量\":28.91,\"投资者数\":82},{\"城市\":\"广州\",\"纬度\":23.13,\"经度\":113.27,\"成交量\":18.76,\"投资者数\":43},{\"城市\":\"天津\",\"纬度\":39.08,\"经度\":117.20,\"成交量\":9.23,\"投资者数\":32},{\"城市\":\"杭州\",\"纬度\":30.27,\"经度\":120.15,\"成交量\":12.34,\"投资者数\":38},{\"城市\":\"成都\",\"纬度\":30.57,\"经度\":104.07,\"成交量\":8.76,\"投资者数\":29},{\"城市\":\"武汉\",\"纬度\":30.59,\"经度\":114.31,\"成交量\":7.56,\"投资者数\":25},{\"城市\":\"南京\",\"纬度\":32.06,\"经度\":118.80,\"成交量\":6.54,\"投资者数\":21},{\"城市\":\"重庆\",\"纬度\":29.56,\"经度\":106.55,\"成交量\":5.43,\"投资者数\":18},{\"城市\":\"西安\",\"纬度\":34.34,\"经度\":108.94,\"成交量\":4.89,\"投资者数\":15},{\"城市\":\"沈阳\",\"纬度\":41.80,\"经度\":123.43,\"成交量\":3.67,\"投资者数\":12},{\"城市\":\"济南\",\"纬度\":36.65,\"经度\":117.12,\"成交量\":4.12,\"投资者数\":14},{\"城市\":\"合肥\",\"纬度\":31.82,\"经度\":117.23,\"成交量\":3.21,\"投资者数\":11}]",
+                        "format": "table",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "volkovlabs-echarts-panel",
+            "version": "7.2.4",
+            "spec": {
+              "options": {
+                "baidu": {
+                  "callback": "bmapReady",
+                  "key": ""
+                },
+                "editor": {
+                  "format": "auto"
+                },
+                "editorMode": "code",
+                "gaode": {
+                  "key": "",
+                  "plugin": "AMap.Scale,AMap.ToolBar"
+                },
+                "getOption": "// 沪港通·深港通 境内投资者地理分布 — ECharts China Map\nvar echartsLib = (typeof context !== 'undefined' && context && context.echarts) ? context.echarts : (typeof echarts !== 'undefined' ? echarts : null);\nvar chartInstance = (typeof context !== 'undefined' && context && context.panel && context.panel.chart) ? context.panel.chart : (typeof echartsInstance !== 'undefined' ? echartsInstance : null);\n\nvar cityData = [\n  {name: '香港', value: [114.17, 22.32, 62.40, 56]},\n  {name: '上海', value: [121.47, 31.23, 48.23, 125]},\n  {name: '北京', value: [116.41, 39.90, 35.67, 98]},\n  {name: '深圳', value: [114.06, 22.54, 28.91, 82]},\n  {name: '广州', value: [113.27, 23.13, 18.76, 43]},\n  {name: '杭州', value: [120.15, 30.27, 12.34, 38]},\n  {name: '天津', value: [117.20, 39.08, 9.23, 32]},\n  {name: '成都', value: [104.07, 30.57, 8.76, 29]},\n  {name: '武汉', value: [114.31, 30.59, 7.56, 25]},\n  {name: '南京', value: [118.80, 32.06, 6.54, 21]},\n  {name: '重庆', value: [106.55, 29.56, 5.43, 18]},\n  {name: '西安', value: [108.94, 34.34, 4.89, 15]},\n  {name: '济南', value: [117.12, 36.65, 4.12, 14]},\n  {name: '沈阳', value: [123.43, 41.80, 3.67, 12]},\n  {name: '合肥', value: [117.23, 31.82, 3.21, 11]}\n];\n\nvar buildOption = function() {\n  return {\n    backgroundColor: '#040D1C',\n    geo: {\n      map: 'china',\n      roam: false,\n      center: [108, 36],\n      zoom: 1.22,\n      itemStyle: {\n        areaColor: '#0A1A35',\n        borderColor: '#1E4D99',\n        borderWidth: 0.9\n      },\n      emphasis: { disabled: true },\n      select: { disabled: true },\n      silent: true,\n      label: { show: false }\n    },\n    series: [{\n      type: 'effectScatter',\n      coordinateSystem: 'geo',\n      data: cityData,\n      symbolSize: function(val) { return Math.max(8, Math.sqrt(val[2]) * 4.2); },\n      rippleEffect: { brushType: 'stroke', scale: 3.2, period: 3 },\n      itemStyle: { color: '#00E5FF', shadowBlur: 18, shadowColor: 'rgba(0,229,255,0.55)' },\n      label: { show: true, formatter: '{b}', position: 'right', color: '#90CAF9', fontSize: 11 },\n      z: 10\n    }],\n    tooltip: {\n      trigger: 'item',\n      backgroundColor: 'rgba(4,13,28,0.92)',\n      borderColor: '#1565C0',\n      borderWidth: 1,\n      padding: [8, 12],\n      textStyle: { color: '#E0E0E0', fontSize: 12 },\n      formatter: function(params) {\n        var v = params.value;\n        return '<div style=\"font-weight:bold;color:#00E5FF;margin-bottom:5px;font-size:13px\">' + params.name + '</div>' +\n          '成交量：<span style=\"color:#00E5FF;font-weight:bold\">' + v[2] + ' 亿港元</span><br/>' +\n          '投资者数：<span style=\"color:#69FF47;font-weight:bold\">' + v[3] + ' 万人</span>';\n      }\n    }\n  };\n};\n\nif (!echartsLib.getMap('china')) {\n  fetch('https://cdn.jsdelivr.net/gh/longwosion/geojson-map-china@master/china.json')\n    .then(function(r) { return r.json(); })\n    .then(function(geoJson) {\n      echartsLib.registerMap('china', geoJson);\n      chartInstance.setOption(buildOption());\n    })\n    .catch(function(err) { console.error('China GeoJSON load error:', err); });\n  return { backgroundColor: '#040D1C' };\n} else {\n  return buildOption();\n}\n",
+                "google": {
+                  "callback": "gmapReady",
+                  "key": ""
+                },
+                "map": "none",
+                "renderer": "canvas",
+                "themeColor": "default",
+                "themeEditor": {
+                  "config": "{}",
+                  "name": "default"
+                },
+                "visualEditor": {
+                  "code": "return {\n  dataset: context.editor.dataset,\n  series: context.editor.series,\n  xAxis: {\n    type: 'time',\n  },\n  yAxis: {\n    type: 'value',\n    min: 'dataMin',\n  },\n}\n",
+                  "dataset": [],
+                  "series": []
+                }
+              },
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-3": {
+        "kind": "Panel",
+        "spec": {
+          "id": 3,
+          "title": "上市股票数",
+          "description": "当前在线设备占全部设备的比例",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "value",
+                            "text": "股票数",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"value\": 2607}]",
+                        "range": false,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "colorMode": "background_solid",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "none",
+                  "decimals": 0,
+                  "min": 0,
+                  "max": 1,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "#1565c0"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-4": {
+        "kind": "Panel",
+        "spec": {
+          "id": 4,
+          "title": "恒生指数(HSI)",
+          "description": "Overall Equipment Effectiveness，反映设备综合运行效率",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "value",
+                            "text": "指数",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"value\": 20389}]",
+                        "range": false,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "colorMode": "background_solid",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "none",
+                  "decimals": 0,
+                  "min": 0,
+                  "max": 1,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "#d4380d"
+                      },
+                      {
+                        "value": 18000,
+                        "color": "#d48806"
+                      },
+                      {
+                        "value": 20000,
+                        "color": "#135200"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-5": {
+        "kind": "Panel",
+        "spec": {
+          "id": 5,
+          "title": "今日成交量(亿股)",
+          "description": "当日记录的设备故障总次数",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "value",
+                            "text": "成交量",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"value\": 38.64}]",
+                        "range": false,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "colorMode": "background_solid",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "none",
+                  "decimals": 2,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "#d4380d"
+                      },
+                      {
+                        "value": 15,
+                        "color": "#d48806"
+                      },
+                      {
+                        "value": 30,
+                        "color": "#135200"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-6": {
+        "kind": "Panel",
+        "spec": {
+          "id": 6,
+          "title": "今日上涨股比例",
+          "description": "当日识别合格产品占总产量的比例",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "bfibr3c61aebkf"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [
+                          {
+                            "selector": "值",
+                            "text": "值",
+                            "type": "number"
+                          }
+                        ],
+                        "data": "[{\"值\": 0.685}]",
+                        "format": "table",
+                        "range": true,
+                        "source": "inline",
+                        "type": "json"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.1.0-24278035669",
+            "spec": {
+              "options": {
+                "colorMode": "background_solid",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "percentunit",
+                  "decimals": 1,
+                  "min": 0,
+                  "max": 1,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "red"
+                      },
+                      {
+                        "value": 0.4,
+                        "color": "orange"
+                      },
+                      {
+                        "value": 0.5,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      }
     },
-    "timepicker": {
-      "refresh_intervals": [
+    "layout": {
+      "kind": "GridLayout",
+      "spec": {
+        "items": [
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 0,
+              "y": 0,
+              "width": 24,
+              "height": 3,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-1"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 0,
+              "y": 3,
+              "width": 4,
+              "height": 5,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-2"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 4,
+              "y": 3,
+              "width": 4,
+              "height": 5,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-3"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 8,
+              "y": 3,
+              "width": 4,
+              "height": 5,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-4"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 12,
+              "y": 3,
+              "width": 4,
+              "height": 5,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-5"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 16,
+              "y": 3,
+              "width": 4,
+              "height": 5,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-6"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 0,
+              "y": 8,
+              "width": 8,
+              "height": 10,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-21"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 8,
+              "y": 8,
+              "width": 8,
+              "height": 10,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-22"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 16,
+              "y": 8,
+              "width": 8,
+              "height": 10,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-23"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 0,
+              "y": 18,
+              "width": 8,
+              "height": 10,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-24"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 8,
+              "y": 18,
+              "width": 8,
+              "height": 10,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-19"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 16,
+              "y": 18,
+              "width": 8,
+              "height": 10,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-20"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 0,
+              "y": 28,
+              "width": 12,
+              "height": 10,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-13"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 12,
+              "y": 28,
+              "width": 12,
+              "height": 10,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-14"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 0,
+              "y": 38,
+              "width": 24,
+              "height": 14,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-25"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "links": [],
+    "liveNow": false,
+    "preload": false,
+    "tags": [],
+    "timeSettings": {
+      "timezone": "browser",
+      "from": "now-6h",
+      "to": "now",
+      "autoRefresh": "",
+      "autoRefreshIntervals": [
         "5s",
         "10s",
         "30s",
@@ -391,54 +1872,18 @@
         "2h",
         "1d"
       ],
-      "time_options": [
-        "5m",
-        "15m",
-        "1h",
-        "6h",
-        "12h",
-        "24h",
-        "2d",
-        "7d",
-        "30d"
-      ]
+      "hideTimepicker": false,
+      "fiscalYearStartMonth": 0
     },
-    "templating": {
-      "list": []
-    },
-    "annotations": {
-      "list": [
-        {
-          "builtIn": true,
-          "datasource": {
-            "name": "-- Grafana --"
-          },
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "type": "dashboard"
+    "title": "港交所证券市场运营驾驶舱",
+    "variables": [],
+    "preferences": {
+      "layout": {
+        "kind": "GridLayout",
+        "spec": {
+          "items": []
         }
-      ]
-    },
-    "refresh": "",
-    "schemaVersion": 27,
-    "version": 1,
-    "links": []
-  },
-  "meta": {
-    "type": "db",
-    "canSave": true,
-    "canEdit": true,
-    "canAdmin": false,
-    "canStar": true,
-    "slug": "china-big-screen-dashboard",
-    "expires": "0001-01-01T00:00:00Z",
-    "created": "0001-01-01T00:00:00Z",
-    "updated": "0001-01-01T00:00:00Z",
-    "updatedBy": "Anonymous",
-    "createdBy": "Anonymous",
-    "version": 1
-  },
-  "message": "Converted to classic Grafana dashboard format"
+      }
+    }
+  }
 }
